@@ -24,6 +24,10 @@ spring:
           uri: lb://friendships
           predicates:
             - Path=/api/v1/friendships/**
+        - id: chats
+          uri: lb://chats
+          predicates:
+            - Path=/api/v1/messages/**
 management:
   tracing:
     sampling:
