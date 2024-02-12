@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="friendship-service" />
         <module name="player-service" />
         <module name="court-service" />
         <module name="gateway" />
@@ -20,6 +21,7 @@
       <module name="config-server" options="-parameters" />
       <module name="court-service" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="friendship-service" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="player-service" options="-parameters" />
     </option>
