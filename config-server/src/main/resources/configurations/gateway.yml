@@ -17,20 +17,13 @@ spring:
           predicates:
             - Path=/api/v1/courts/**
         - id: players
-          uri: lb://players # Esta línea debe cambiarse para usar discovery service
+          uri: lb://players
           predicates:
             - Path=/api/v1/players/**
-        - id: swagger-players
-          uri: lb://players # Se añade para enrutar a través de Eureka con LoadBalancer
+        - id: friendships
+          uri: lb://friendships
           predicates:
-            - Path=/swagger-ui/index.html
-            - Path=/api-docs/**
-        - id: swagger-ui-players
-          uri: lb://players # Se añade igualmente para carga dinámica de los recursos de Swagger UI
-          predicates:
-            - Path=/swagger-ui/**
-          filters:
-            - RewritePath=/swagger-ui/(?<segment>.*), /swagger-ui/$\{segment}
+            - Path=/api/v1/friendships/**
 management:
   tracing:
     sampling:

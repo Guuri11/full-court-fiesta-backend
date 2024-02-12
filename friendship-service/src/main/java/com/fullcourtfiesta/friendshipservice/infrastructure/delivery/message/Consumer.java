@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class Consumer {
 
   @KafkaListener(topics = "friendship", groupId = "friendshipGroup")
-  public void consumeMessageJson(Friendship player) {
-    log.info(String.format("Consuming the message from friendship Topic:: %s", player));
+  public void consumeMessageJson(Friendship friendship) {
+    log.info(String.format("Consuming the message from friendship Topic:: %s", friendship));
   }
 }

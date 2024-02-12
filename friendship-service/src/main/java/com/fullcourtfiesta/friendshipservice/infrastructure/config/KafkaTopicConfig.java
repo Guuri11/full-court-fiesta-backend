@@ -9,7 +9,7 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfig {
 
   @Bean
-  public NewTopic playerTopic() {
+  public NewTopic friendshipTopic() {
     return TopicBuilder
         .name("friendship")
         .build();

@@ -16,9 +16,9 @@ public class Producer {
   private final KafkaTemplate<String, String> kafkaTemplate;
   private final KafkaTemplate<String, Friendship> kafkaTemplateJson;
 
-  public void sendMessageJson(Friendship player) {
+  public void sendMessageJson(Friendship friendship) {
 
-    Message<Friendship> message = MessageBuilder.withPayload(player)
+    Message<Friendship> message = MessageBuilder.withPayload(friendship)
         .setHeader(KafkaHeaders.TOPIC, "friendship").build();
 
     kafkaTemplateJson.send(message);
