@@ -6,14 +6,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 server:
-  port: 8093
+  port: 8094
 spring:
   application:
-    name: chat
+    name: event
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5435/chat
-    username: chat-user
+    url: jdbc:postgresql://localhost:5436/event
+    username: event-user
     password: password
   jpa:
     hibernate:
@@ -27,17 +27,17 @@ spring:
       mode: always
   docker:
     compose:
-      file: chat-service/compose.yaml
+      file: event-service/compose.yaml
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
-      group-id: chatGroup
+      group-id: eventGroup
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       # value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: com.fullcourtfiesta.chatservice.domain
+        spring.json.trusted.packages: com.fullcourtfiesta.eventservice.domain
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer

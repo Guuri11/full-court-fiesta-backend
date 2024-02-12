@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=event'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=event-user'
+    ports:
+      - '5436:5432'

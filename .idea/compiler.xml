@@ -10,12 +10,17 @@
         <module name="config-server" />
         <module name="friendship-service" />
         <module name="court-service" />
+        <module name="event-service" />
         <module name="discovery" />
         <module name="chat-service" />
         <module name="player-service" />
         <module name="gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="friendship-service (1)" target="17" />
+      <module name="friendship-service (2)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -23,7 +28,10 @@
       <module name="config-server" options="-parameters" />
       <module name="court-service" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="event-service" options="-parameters" />
       <module name="friendship-service" options="-parameters" />
+      <module name="friendship-service (1)" options="-parameters" />
+      <module name="friendship-service (2)" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="player-service" options="-parameters" />
     </option>

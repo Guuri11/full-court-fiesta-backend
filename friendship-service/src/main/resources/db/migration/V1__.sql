@@ -1,8 +1,8 @@
 CREATE TABLE friendship
 (
     id           BIGSERIAL NOT NULL,
-    player_id   UUID,
-    follower_id UUID,
+    player_id   BIGSERIAL,
+    follower_id BIGSERIAL,
     created_at  TIMESTAMP WITHOUT TIME ZONE,
     updated_at  TIMESTAMP WITHOUT TIME ZONE,
     CONSTRAINT pk_friendship PRIMARY KEY (id)
@@ -10,7 +10,7 @@ CREATE TABLE friendship
 
 CREATE TABLE player
 (
-    id          UUID NOT NULL,
+    id          BIGSERIAL NOT NULL,
     email      VARCHAR(255) NOT NULL,
     username   VARCHAR(255) NOT NULL,
     full_name  VARCHAR(255),

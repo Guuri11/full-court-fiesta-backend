@@ -1,6 +1,7 @@
-package com.fullcourtfiesta.friendshipservice.domain;
+package com.fullcourtfiesta.eventservice.domain;
 
-import com.fullcourtfiesta.friendshipservice.domain.Player.Player;
+import com.fullcourtfiesta.eventservice.domain.Court.Court;
+import com.fullcourtfiesta.eventservice.domain.Player.Player;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,14 +14,18 @@ import org.springframework.data.relational.core.mapping.Column;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Friendship {
+public class Event {
 
   @Id
   private Long id;
   @Column("player_id")
   private Player player;
-  @Column("follower_id")
-  private Player follower;
+  private String title;
+  private String description;
+  private LocalDateTime dateTime;
+  @Column("court_id")
+  private Court court;
+  private EventState eventState;
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
 

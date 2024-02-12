@@ -2,7 +2,6 @@ package com.fullcourtfiesta.playerservice.domain;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

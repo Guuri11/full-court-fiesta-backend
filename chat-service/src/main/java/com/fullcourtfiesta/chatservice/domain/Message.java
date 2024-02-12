@@ -2,7 +2,6 @@ package com.fullcourtfiesta.chatservice.domain;
 
 import com.fullcourtfiesta.chatservice.domain.Player.Player;
 import java.time.LocalDateTime;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +16,7 @@ import org.springframework.data.relational.core.mapping.Column;
 public class Message {
 
   @Id
-  private UUID id;
+  private Long id;
   @Column("sender_id")
   private Player sender;
   @Column("receiver_id")
