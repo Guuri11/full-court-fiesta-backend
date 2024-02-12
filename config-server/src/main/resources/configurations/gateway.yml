@@ -1,0 +1,37 @@
+eureka:
+  client:
+    register-with-eureka: false
+server:
+  port: 8222
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: courts
+          uri: http://localhost:8090
+          predicates:
+            - Path=/api/v1/courts/**
+        - id: players
+          uri: lb://players # Esta línea debe cambiarse para usar discovery service
+          predicates:
+            - Path=/api/v1/players/**
+        - id: swagger-players
+          uri: lb://players # Se añade para enrutar a través de Eureka con LoadBalancer
+          predicates:
+            - Path=/swagger-ui/index.html
+            - Path=/api-docs/**
+        - id: swagger-ui-players
+          uri: lb://players # Se añade igualmente para carga dinámica de los recursos de Swagger UI
+          predicates:
+            - Path=/swagger-ui/**
+          filters:
+            - RewritePath=/swagger-ui/(?<segment>.*), /swagger-ui/$\{segment}
+management:
+  tracing:
+    sampling:
+      probability: 1.0
