@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="friendship-service" />
+        <module name="post-service" />
         <module name="court-service" />
         <module name="event-service" />
         <module name="discovery" />
@@ -34,6 +35,7 @@
       <module name="friendship-service (2)" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="player-service" options="-parameters" />
+      <module name="post-service" options="-parameters" />
     </option>
   </component>
 </project>
